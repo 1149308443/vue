@@ -2,8 +2,8 @@
 #####本项目将作为未来工作中的Vue基础框架，类似脚手架
 
 ##使用
-#####开发环境  运行npm run dev 
-#####生成环境  运行npm run build 进行项目的打包 然后 npm start 启动项目
+开发环境  运行npm run dev 
+生成环境  运行npm run build 进行项目的打包 然后 npm start 启动项目
 
 ##目录说明
 #####.build webpack配置项
