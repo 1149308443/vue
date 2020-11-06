@@ -3,12 +3,12 @@ import App from './App.vue';
 import router from '@/router';
 import store from '@/store';
 
-import './common.scss';
+import './common.less';
 
 new Vue({
   router,
   store,
   el: '#app',
-  template: '<App/>',
-  components: { App }
-})
+  components: { App },
+  template: '<App/>'
+});

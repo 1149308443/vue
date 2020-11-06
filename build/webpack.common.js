@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
@@ -19,12 +19,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template:'./src/entry/index.html'
         }),
-        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin()
     ],
     resolve: {
-        extensions: ['.js', '.vue', '.json', '.css', '.scss', '.html'],
+        extensions: ['.js', '.vue', '.json', '.css', '.less', '.html'],
         alias: {
             'vue': 'vue/dist/vue.js',
             '@': path.resolve(__dirname, '../src')
@@ -48,26 +47,27 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader'
                 ],
             },
             {
-                test: /\.scss$/,
+                test: /\.less$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
-                    'sass-loader'
+                    // {
+                    //     loader: 'css-loader',
+                    //     options: {
+                    //       modules: {
+                    //         localIdentName: '[local]_[sha1:hash:base64:5]'
+                    //       }
+                    //     }
+                    // },
+                    'less-loader'
                 ],
             },
-            {
-                test: /\.sass$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'sass-loader?indentedSyntax'
-                ],
-            },{
+           {
                 test: /\.(png|jpg|jpeg|gif|svg)$/i,
                 loader: 'url-loader',
                 options: {
