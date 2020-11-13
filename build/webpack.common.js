@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
@@ -17,16 +18,28 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template:'./src/entry/index.html'
+            template:'./src/entry/index.html',
+            favicon: './src/entry/favicon.ico',
+            title: '吴维兴的个人小站',
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new CopyWebpackPlugin({
+            patterns:[{
+                context:path.resolve(__dirname, '../static'),
+                from:'**/*',
+                to: path.resolve(__dirname, '../dist'),
+            }]
+        }),
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json', '.css', '.less', '.html'],
         alias: {
             'vue': 'vue/dist/vue.js',
-            '@': path.resolve(__dirname, '../src')
+            '@': path.resolve(__dirname, '../src'),
+            '@comp': path.resolve(__dirname, '../src/components'),
+            '@pages': path.resolve(__dirname, '../src/pages'),
+            '@static': path.resolve(__dirname, '../static'),
         }
     },
     module: {
@@ -56,14 +69,16 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    // {
-                    //     loader: 'css-loader',
-                    //     options: {
-                    //       modules: {
-                    //         localIdentName: '[local]_[sha1:hash:base64:5]'
-                    //       }
-                    //     }
-                    // },
+                    /*
+                     * {
+                     *     loader: 'css-loader',
+                     *     options: {
+                     *       modules: {
+                     *         localIdentName: '[local]_[sha1:hash:base64:5]'
+                     *       }
+                     *     }
+                     * },
+                     */
                     'less-loader'
                 ],
             },

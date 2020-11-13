@@ -24,13 +24,14 @@ export default {
         return {
           msg: 'Welcome to Your Vue.js',
           // styles: style
-        }
+        };
     },
     created(){
-        
+        // vue实例被创建之后执行 this指向vue实例
+        console.log(this.msg);
     },
     methods: {
         
     }
-}
+};
 </script>

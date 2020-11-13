@@ -1,5 +1,13 @@
 <template>
-  <div class="LayoutContainer" />
+  <div class="LayoutContainer">
+    <Header />
+    <div class="contentBox">
+      <div class="innerContent">
+        <slot />
+      </div>
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -12,12 +20,5 @@ export default {
         Header,
         Footer
     },
-    data(){
-        return{
-            
-        };
-    },
-    methods
-    
 };
 </script>

@@ -40,7 +40,7 @@ module.exports = {
     // 禁止出现空函数
     'no-empty-function': 2,
     // 强制对多行注释使用特定风格
-    'multiline-comment-style': 2,
+    'multiline-comment-style': 0,
     // 禁止在代码后使用内联注释
     'no-inline-comments': 2,
     // 禁止 if 作为唯一的语句出现在 else 语句中
@@ -49,5 +49,6 @@ module.exports = {
     'no-multi-assign': 2,
     // 禁止在注释块中使用空白符、允许在空行使用空白符（空格、tab 和其它 Unicode 空白字符）
     'no-trailing-spaces': [2, {'skipBlankLines': true}],
+    'vue/singleline-html-element-content-newline':0
     }
 };
