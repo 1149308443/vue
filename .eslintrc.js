@@ -42,7 +42,7 @@ module.exports = {
     // 强制对多行注释使用特定风格
     'multiline-comment-style': 0,
     // 禁止在代码后使用内联注释
-    'no-inline-comments': 2,
+    'no-inline-comments': 0,
     // 禁止 if 作为唯一的语句出现在 else 语句中
     'no-lonely-if': 2,
     // 禁止连续赋值
