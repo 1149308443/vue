@@ -4,7 +4,8 @@
       "paths": {
         "@/*": ["src/*"],
         "@pages": ["src/pages"],
-        "@comp": ["src/components"]
+        "@comp": ["src/components"],
+        "@util": ["src/util"]
       },
       "experimentalDecorators": true
     }

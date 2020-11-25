@@ -38,6 +38,7 @@ module.exports = {
             'vue': 'vue/dist/vue.js',
             '@': path.resolve(__dirname, '../src'),
             '@comp': path.resolve(__dirname, '../src/components'),
+            '@util': path.resolve(__dirname, '../src/util'),
             '@pages': path.resolve(__dirname, '../src/pages'),
             '@static': path.resolve(__dirname, '../static'),
         }

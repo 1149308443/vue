@@ -6,22 +6,29 @@
     >
       关注我
     </Button>
+    <!-- <Message /> -->
+    <BackTop />
   </div>
 </template>
 
 <script>
-import MavonEditor from '@comp/MavonEditor/';
 import Button from '@comp/Button/';
+import BackTop from '@comp/BackTop/';
+import Message from '@comp/Message/';
 
 export default {
     components:{
-      MavonEditor,
-      Button
+      Button,
+      BackTop,
+      Message
     },
     data(){
       return{
         isloading:false
       };
+    },
+    mounted(){
+      // console.log(1);
     },
     methods:{
       clickBtn:function(){
