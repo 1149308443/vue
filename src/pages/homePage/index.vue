@@ -58,7 +58,6 @@
         </div>
       </div>
     </div>
-    </div>
   </Layout>
 </template>
 

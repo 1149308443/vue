@@ -6,21 +6,21 @@
     >
       关注我
     </Button>
-    <!-- <Message /> -->
     <BackTop />
+    <Loading />
   </div>
 </template>
 
 <script>
 import Button from '@comp/Button/';
 import BackTop from '@comp/BackTop/';
-import Message from '@comp/Message/';
+import Loading from '@comp/Loading/';
 
 export default {
     components:{
       Button,
       BackTop,
-      Message
+      Loading
     },
     data(){
       return{
@@ -28,15 +28,19 @@ export default {
       };
     },
     mounted(){
-      // console.log(1);
+      // this.$message.show('message');
     },
     methods:{
       clickBtn:function(){
-        this.isloading = true;
-        const that = this;
-        setTimeout(function(){
-          that.isloading = false;
-        },500);
+        // this.isloading = true;
+        // const that = this;
+        this.$message.show({
+          message:'nihao',
+          type:'success'
+        });
+        // setTimeout(function(){
+        //   that.isloading = false;
+        // },500);
       }
     }
 };

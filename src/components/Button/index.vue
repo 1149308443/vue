@@ -74,7 +74,7 @@ export default {
             cursor: not-allowed;
         }
         &.loading{
-             cursor: wait;
+            //  cursor: wait;
         }
     }
 </style>
