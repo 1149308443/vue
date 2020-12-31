@@ -1,8 +1,8 @@
 <template>
-  <div class="loadingContainer">
+  <div :class="['loadingContainer',show ? 'show' : '', fullscreen ? 'fullscreen':'']">
     <div class="inner">
       <Icon class="fa-spinner fa-pulse" />
-      <div>加载中...</div>
+      <div v-html="text" />
     </div>
   </div>
 </template>
@@ -13,22 +13,42 @@ export default {
     name:'Loading',
     components:{
         Icon
+    },
+    props:{
+      show:{ //控制展示/隐藏
+        type: Boolean,
+        default: false
+      },
+      fullscreen:{ // 控制全屏
+        type: Boolean,
+        default: false
+      },
+      text:{
+        type: String,
+        default: '加载中...'
+      }
     }
 };
 </script>
 
 <style lang="less" scoped>
 .loadingContainer{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.4);
     display: none;
+    color: #409eff;
     // background: transparent;
     &.show{
         display: block;
+    }
+    &.fullscreen{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
     }
     .inner{
         width: 100px;
