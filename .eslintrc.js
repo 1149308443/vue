@@ -49,6 +49,7 @@ module.exports = {
     'no-multi-assign': 2,
     // 禁止在注释块中使用空白符、允许在空行使用空白符（空格、tab 和其它 Unicode 空白字符）
     'no-trailing-spaces': [2, {'skipBlankLines': true}],
-    'vue/singleline-html-element-content-newline':0
+    'vue/singleline-html-element-content-newline':0,
+    'vue/attribute-hyphenation': 0
     }
 };

@@ -17,7 +17,19 @@
 
 <script>
 export default {
-    
+    name:"Card",
+    props:{
+      clickCard:{
+        type: Function,
+        // eslint-disable-next-line no-empty-function
+        default: ()=>{}
+      },
+    },
+    created() {
+      // this.clickCard(111);
+      // eslint-disable-next-line vue/custom-event-name-casing
+      this.$emit('clickCard',1111);
+    },
 };
 </script>
 

@@ -78,7 +78,8 @@
       <div class="right">
         <div class="cardBox menu">
           <div class="title">最热文章</div>
-          <Card />
+          <!-- <Card :clickCard="clickCard" /> -->
+          <Card @clickCard="clickCard" />
         </div>
         <div class="cardBox menu">
           <div class="title">归档</div>
@@ -115,9 +116,13 @@ export default {
     },
     created(){
       // document.title = '首页';
-      console.log(this.$store.state);
       const { commit } = this.$store;
       commit('increment');
+    },
+    methods: {
+      clickCard: function(e){
+        console.log('你好',e);
+      }
     }
 };
 </script>
