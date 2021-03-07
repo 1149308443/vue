@@ -52,7 +52,6 @@ export default {
             //     console.log('loading unbind');
             // }
         });
-
         Vue.mixin({// 3. 通过全局 mixin方法添加一些组件选项，如: vuex
             mounted() {
                 this.$loading = loading;
