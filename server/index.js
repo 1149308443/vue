@@ -5,7 +5,7 @@ const route = require("./router/route");
 
 const app = express();
 
-app.use(history({}))
+app.use(history({}));
 
 app.use('/static', express.static(path.resolve(__dirname, '../static')));
 
